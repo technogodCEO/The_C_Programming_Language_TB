@@ -1,0 +1,23 @@
+# Compiler and flags
+CC = clang
+CFLAGS = -Wall -Wextra -std=c11
+
+# Find every .c file in all chapter directories
+SRCS = $(wildcard ch*/*.c)
+
+# For each .c file, define a corresponding executable (same path, no extension)
+BINS = $(SRCS:.c=)
+
+# Phony so make will run even if files named 'all' or 'clean' exist
+.PHONY: all clean
+
+# Default target: build everything
+all: $(BINS)
+
+# Rule: how to build any executable from a .c file
+%: %.c
+	$(CC) $(CFLAGS) $< -o $@
+
+# Remove all compiled binaries
+clean:
+	rm -f $(BINS)
