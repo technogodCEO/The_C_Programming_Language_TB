@@ -15,7 +15,7 @@ BINS = $(SRCS:.c=)
 all: $(BINS)
 
 # Rule: how to build any executable from a .c file
-%: %.c
+%.o: %.c
 	$(CC) $(CFLAGS) $< -o $@
 
 # Remove all compiled binaries
