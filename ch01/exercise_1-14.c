@@ -4,6 +4,10 @@
 #define FIRSTCHAR 32
 #define LASTCHAR 126
 
+/*
+Tracks the amount of occurrences of each printable ASCII character in 
+source material, and then presents it in a horizontal histogram chart
+*/
 
 int main() {
     int c;

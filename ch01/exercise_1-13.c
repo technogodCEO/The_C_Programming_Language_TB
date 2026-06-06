@@ -5,6 +5,11 @@
 
 #define WORDLENGTHMAX 15
 
+/*
+Finds count of words of each length, and presents the distribution
+in both a horizontal and vertical histogram
+*/
+
 int main() {
     int currentWordLength = 0, state = OUT, c;
     int wordLengths[WORDLENGTHMAX] = {0};
